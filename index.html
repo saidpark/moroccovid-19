@@ -441,7 +441,7 @@
 	<!--<script src="src/js/api.js"> -->
 	<script>
 		
-	fetch("https://tram-production.com/covid-api/api.php", {
+fetch("https://tram-production.com/covid-api/api.php", {
     mode: 'no-cors'
   })
   .then(response => response.json())
@@ -467,8 +467,11 @@
   document.getElementById("SoussMassa").textContent = SoussMassa;
   document.getElementById("BeniMellalKhnifra").textContent = BeniMellalKhnifra;
 
-});
-
+})
+ .catch(e => {
+    console.log(e);
+    return e;
+  });
 
 
 	</script>
