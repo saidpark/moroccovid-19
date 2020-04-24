@@ -471,31 +471,14 @@
 fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
-  console.table(data);
-    let Fsmeknes = data.FESMEKNES;
-  let MarrakechSafi = data.MERRAKECHSAFI;
-  let RabatSalKenitra = data.RABATSALKENITRA;
-  let TangerTetouanAlHoceima = data.TANGERTETOUANELHOCEIMA;
-  let CasaSettat = data.CASASETTAT;
-  let GuelmimOuedNoun = data.GUELMIMOUEDNOUN;
-  let Oriental = data.ORIENTAL;
-  let SoussMassa = data.SOUSSMASSA;
-  let BeniMellalKhnifra = data.BENIMELLALKHNIFRA;
-
-  document.getElementById("Fsmeknes").textContent = Fsmeknes;
-  document.getElementById("MarrakechSafi").textContent = MarrakechSafi;
-  document.getElementById("RabatSalKenitra").textContent = RabatSalKenitra;
-  document.getElementById("TangerTetouanAlHoceima").textContent = TangerTetouanAlHoceima;
-  document.getElementById("CasaSettat").textContent = CasaSettat;
-  document.getElementById("GuelmimOuedNoun").textContent = GuelmimOuedNoun;
-  document.getElementById("Oriental").textContent = Oriental;
-  document.getElementById("SoussMassa").textContent = SoussMassa;
-  document.getElementById("BeniMellalKhnifra").textContent = BeniMellalKhnifra;
+    console.table(data);
+    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+    return data;
   })
   .catch(e => {
     console.log(e);
     return e;
-  });	
+  });
 
 	</script>
 </body>
