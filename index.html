@@ -441,19 +441,29 @@
 	<!--<script src="src/js/api.js"> -->
 	<script>
 
-	var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+	<script>
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrl = 'https://tram-production.com/covid-api/'
 fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
     console.table(data);
-    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+    var mData = data.REGION[2];			
+//t = total			
+var tConfirmed = mData.REG_CASES;			
+var tDeaths = mData.REG_DEATHS;			
+var tRecovered = mData.REG_RECOVERED;
+			
+document.getElementById("tC").textContent = tConfirmed;
+document.getElementById("tD").textContent = tDeaths;
+document.getElementById("tR").textContent = tRecovered;
     return data;
   })
   .catch(e => {
     console.log(e);
     return e;
-  }); 
+  });
+</script>
 
 	</script>
 <pre></pre>
