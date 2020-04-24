@@ -466,12 +466,15 @@
 
 		getData();
 		
-		const regi_url = ('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
-		async function getRegions() {
-  const response = await fetch(regi_url);
-  const data = await response.json();
-			
-  let Fsmeknes = data.FESMEKNES;
+		const regi_url = 'https://tram-production.com/covid-api/api.php', { mode: 'no-cors'};
+
+async function getRegions() {
+  
+const response = await fetch(regi_url);
+  
+const data = await response.json();
+
+    let Fsmeknes = data.FESMEKNES;
   let MarrakechSafi = data.MERRAKECHSAFI;
   let RabatSalKenitra = data.RABATSALKENITRA;
   let TangerTetouanAlHoceima = data.TANGERTETOUANELHOCEIMA;
@@ -490,8 +493,11 @@
   document.getElementById("Oriental").textContent = Oriental;
   document.getElementById("SoussMassa").textContent = SoussMassa;
   document.getElementById("BeniMellalKhnifra").textContent = BeniMellalKhnifra;
-			}
-			getRegions();
+
+}
+
+
+getRegions();
 
 	</script>
 </body>
