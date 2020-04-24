@@ -441,22 +441,16 @@
 	<!--<script src="src/js/api.js"> -->
 	<script>
 		
-fetch("https://tram-production.com/covid-api/api.php", {
-    mode: 'no-cors'
+fetch('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
+  .then(blob => blob.json())
+  .then(data => {
+    console.table(data);
+    return data;
   })
-  .then(response => response.json())
-  .then((data) => {
-
-			var tConfirmed = mData.WORLD-CASES;
-			var tDeaths = mData.WORLD-DEATHS;
-			var tRecovered = mData.WORLD-RECOVERED;
-
-			document.getElementById("tC").textContent = tConfirmed;
-			document.getElementById("tD").textContent = tDeaths;
-			document.getElementById("tR").textContent = tRecovered;
-
-})
-
+  .catch(e => {
+    console.log(e);
+    return e;
+  });
 
 	</script>
 </body>
