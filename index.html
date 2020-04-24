@@ -447,33 +447,15 @@ fetch("https://tram-production.com/covid-api/api.php", {
   .then(response => response.json())
   .then((data) => {
 
-var mData = data.REGIONS;
+			var tConfirmed = mData.WORLD-CASES;
+			var tDeaths = mData.WORLD-DEATHS;
+			var tRecovered = mData.WORLD-RECOVERED;
 
-  let Fsmeknes = data.FESMEKNES;
-  let MarrakechSafi = data.MERRAKECHSAFI;
-  let RabatSalKenitra = data.RABATSALKENITRA;
-  let TangerTetouanAlHoceima = data.TANGERTETOUANELHOCEIMA;
-  let CasaSettat = data.CASASETTAT;
-  let GuelmimOuedNoun = data.GUELMIMOUEDNOUN;
-  let Oriental = data.ORIENTAL;
-  let SoussMassa = data.SOUSSMASSA;
-  let BeniMellalKhnifra = data.BENIMELLALKHNIFRA;
-
-  document.getElementById("Fsmeknes").textContent = Fsmeknes;
-  document.getElementById("MarrakechSafi").textContent = MarrakechSafi;
-  document.getElementById("RabatSalKenitra").textContent = RabatSalKenitra;
-  document.getElementById("TangerTetouanAlHoceima").textContent = TangerTetouanAlHoceima;
-  document.getElementById("CasaSettat").textContent = CasaSettat;
-  document.getElementById("GuelmimOuedNoun").textContent = GuelmimOuedNoun;
-  document.getElementById("Oriental").textContent = Oriental;
-  document.getElementById("SoussMassa").textContent = SoussMassa;
-  document.getElementById("BeniMellalKhnifra").textContent = BeniMellalKhnifra;
+			document.getElementById("tC").textContent = tConfirmed;
+			document.getElementById("tD").textContent = tDeaths;
+			document.getElementById("tR").textContent = tRecovered;
 
 })
- .catch(e => {
-    console.log(e);
-    return e;
-  });
 
 
 	</script>
