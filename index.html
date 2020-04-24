@@ -441,13 +441,13 @@
 	<!--<script src="src/js/api.js"> -->
 	<script>
 		
-		fetch('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
+	fetch("https://tram-production.com/covid-api/api.php", {
+    mode: 'cors'
+  })
+  .then(response => response.json())
+  .then((data) => {
 
-async function getRegions() {
-const response = await fetch();    
-const data = await response.json();
-
-    let Fsmeknes = data.FESMEKNES;
+  let Fsmeknes = data.FESMEKNES;
   let MarrakechSafi = data.MERRAKECHSAFI;
   let RabatSalKenitra = data.RABATSALKENITRA;
   let TangerTetouanAlHoceima = data.TANGERTETOUANELHOCEIMA;
@@ -470,7 +470,6 @@ const data = await response.json();
 }
 
 
-getRegions();
 
 	</script>
 </body>
