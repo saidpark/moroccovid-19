@@ -466,7 +466,7 @@
 
 		getData();
 		
-		fetch regi_url ('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
+		const regi_url ('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
 		async function getRegions() {
   const response = await fetch(regi_url);
   const data = await response.json();
