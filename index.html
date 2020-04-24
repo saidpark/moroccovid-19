@@ -447,6 +447,8 @@ fetch("https://tram-production.com/covid-api/api.php", {
   .then(response => response.json())
   .then((data) => {
 
+var mData = data.REGIONS;
+
   let Fsmeknes = data.FESMEKNES;
   let MarrakechSafi = data.MERRAKECHSAFI;
   let RabatSalKenitra = data.RABATSALKENITRA;
