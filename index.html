@@ -471,22 +471,7 @@
 fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
-    console.table(data);
-    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
-    return data;
-  })
-  .catch(e => {
-    console.log(e);
-    return e;
-  });
-		
-		const regi_url = "https://tram-production.com/covid-api/api.php";
-
-async function getRegions() {
-  const response = await fetch(regi_url);
-  const data = await response.json();
-
-  let Fsmeknes = data.Fsmeknes;
+    let Fsmeknes = data.Fsmeknes;
   let MarrakechSafi = data.MarrakechSafi;
   let RabatSalKenitra = data.RabatSalKenitra;
   let TangerTetouanAlHoceima = data.TangerTetouanAlHoceima;
@@ -505,9 +490,12 @@ async function getRegions() {
   document.getElementById("Oriental").textContent = Oriental;
   document.getElementById("SoussMassa").textContent = SoussMassa;
   document.getElementById("BeniMellalKhnifra").textContent = BeniMellalKhnifra;
-}
-
-getRegions();
+  })
+  .catch(e => {
+    console.log(e);
+    return e;
+  });
+		
 
 	</script>
 </body>
