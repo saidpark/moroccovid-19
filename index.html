@@ -466,13 +466,10 @@
 
 		getData();
 		
-		var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrl = 'https://tram-production.com/covid-api/api.php'
-fetch(proxyUrl + targetUrl)
+		fetch('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
   .then(blob => blob.json())
   .then(data => {
     console.table(data);
-    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
     return data;
   })
   .catch(e => {
