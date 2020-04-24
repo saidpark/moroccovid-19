@@ -441,15 +441,19 @@
 	<!--<script src="src/js/api.js"> -->
 	<script>
 
-
-	fetch('https://tram-production.com/covid-api/', { mode: 'no-cors'})
+	var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+    targetUrl = 'https://tram-production.com/covid-api/'
+fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
     console.table(data);
+    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
     return data;
-  });
- 
-
+  })
+  .catch(e => {
+    console.log(e);
+    return e;
+  }); 
 
 	</script>
 </body>
