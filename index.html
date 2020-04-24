@@ -471,6 +471,7 @@
 fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
+  console.table(data);
     let Fsmeknes = data.Fsmeknes;
   let MarrakechSafi = data.MarrakechSafi;
   let RabatSalKenitra = data.RabatSalKenitra;
