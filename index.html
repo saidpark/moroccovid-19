@@ -466,7 +466,7 @@
 
 		getData();
  
-		fetch('https://tram-production.com/covid-api/api.php', { mode: 'no-cors'})
+		fetch('https://tram-production.com/covid-api', { mode: 'no-cors'})
   .then(blob => blob.json())
   .then(data => {
     console.table(data);
