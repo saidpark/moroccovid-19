@@ -466,34 +466,19 @@
 
 		getData();
 		
-		const regi_url = "https://tram-production.com/covid-api/api.php";
-
-async function getRegions() {
-  const response = await fetch(regi_url);
-  const data = await response.json();
-
-  let Fsmeknes = data.Fsmeknes;
-  let MarrakechSafi = data.MarrakechSafi;
-  let RabatSalKenitra = data.RabatSalKenitra;
-  let TangerTetouanAlHoceima = data.TangerTetouanAlHoceima;
-  let CasaSettat = data.CasaSettat;
-  let GuelmimOuedNoun = data.GuelmimOuedNoun;
-  let Oriental = data.Oriental;
-  let SoussMassa = data.SoussMassa;
-  let BeniMellalKhnifra = data.BeniMellalKhnifra;
-
-  document.getElementById("Fsmeknes").textContent = Fsmeknes;
-  document.getElementById("MarrakechSafi").textContent = MarrakechSafi;
-  document.getElementById("RabatSalKenitra").textContent = RabatSalKenitra;
-  document.getElementById("TangerTetouanAlHoceima").textContent = TangerTetouanAlHoceima;
-  document.getElementById("CasaSettat").textContent = CasaSettat;
-  document.getElementById("GuelmimOuedNoun").textContent = GuelmimOuedNoun;
-  document.getElementById("Oriental").textContent = Oriental;
-  document.getElementById("SoussMassa").textContent = SoussMassa;
-  document.getElementById("BeniMellalKhnifra").textContent = BeniMellalKhnifra;
-}
-
-getRegions();
+		var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+    targetUrl = 'https://tram-production.com/covid-api/api.php'
+fetch(proxyUrl + targetUrl)
+  .then(blob => blob.json())
+  .then(data => {
+    console.table(data);
+    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+    return data;
+  })
+  .catch(e => {
+    console.log(e);
+    return e;
+  });
 
 	</script>
 </body>
