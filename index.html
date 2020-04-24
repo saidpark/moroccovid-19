@@ -442,7 +442,7 @@
 	<script>
 
 
-	fetch('https://tram-production.com/covid-api/', { mode: 'no-cors'})
+	fetch('https://tram-production.com/covid-api/', { mode: 'cors'})
   .then(blob => blob.json())
   .then(data => {
     console.table(data);
