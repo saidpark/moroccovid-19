@@ -445,8 +445,8 @@ var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
-    console.table(data);
-    var mData = data.REGION[2];			
+    
+    var mData = data.DATA_BY_REGION[2];			
 //t = total			
 var tConfirmed = mData.REG_CASES;			
 var tDeaths = mData.REG_DEATHS;			
@@ -455,7 +455,7 @@ var tRecovered = mData.REG_RECOVERED;
 document.getElementById("tC").textContent = tConfirmed;
 document.getElementById("tD").textContent = tDeaths;
 document.getElementById("tR").textContent = tRecovered;
-    return data;
+    return mData;
   });
  
 </script>
