@@ -447,10 +447,10 @@ fetch(proxyUrl + targetUrl)
   .then(data => {
     			
 //t = total			
-var tConfirmed = data.MA-CASES;
-var tActive = data.MA-ACTIVE-CASES			
-var tDeaths = data.MA-DEATHS;			
-var tRecovered = data.MA-RECOVERED;
+let tConfirmed = data.MA-CASES;
+let tActive = data.MA-ACTIVE-CASES;			
+let tDeaths = data.MA-DEATHS;			
+let tRecovered = data.MA-RECOVERED;
 			
 document.getElementById("tC").textContent = tConfirmed;
 document.getElementById("tA").textContent = tActive;
