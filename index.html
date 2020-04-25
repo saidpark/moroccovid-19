@@ -80,7 +80,7 @@
 						<div class="d-flex">
 							<div class="">
 								<p class="mb-2 h6">المصابون</p>
-								<h2 class="mb-1 "><span id="MA-RECOVERED">-</span></h2>
+								<h2 class="mb-1 "><span id="tA">-</span></h2>
 							</div>
 							<div class=" my-auto mr-auto">
 								<i class="icn fas fa-procedures" style="color: orangered;"></i>
@@ -445,17 +445,18 @@ var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 fetch(proxyUrl + targetUrl)
   .then(blob => blob.json())
   .then(data => {
-    
-    var mData = data.DATA_BY_REGION[2];			
+    			
 //t = total			
-var tConfirmed = mData.REG_CASES;			
-var tDeaths = mData.REG_DEATHS;			
-var tRecovered = mData.REG_RECOVERED;
+var tConfirmed = data.MA-CASES;
+var tActive = data.MA-ACTIVE-CASES			
+var tDeaths = data.MA-DEATHS;			
+var tRecovered = data.MA-RECOVERED;
 			
 document.getElementById("tC").textContent = tConfirmed;
+document.getElementById("tA").textContent = tActive;
 document.getElementById("tD").textContent = tDeaths;
 document.getElementById("tR").textContent = tRecovered;
-    return mData;
+    return data;
   });
  
 </script>
